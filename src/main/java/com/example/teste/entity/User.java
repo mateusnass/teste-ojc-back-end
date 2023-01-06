@@ -1,70 +1,47 @@
 package com.example.teste.entity;
 
-import java.util.Objects;
+import jakarta.persistence.*;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import java.io.Serializable;
+import java.util.UUID;
 
-import lombok.Data;
-
-@Data
 @Entity
-public class User {
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	@Column(nullable = false)
-	private String login;
+@Table(name = "users")
 
-	@Column(nullable = false)
-	private String password;
+public class User implements Serializable {
 
-	public String getPassword() {
-		return password;
-	}
+    @Id
+    @GeneratedValue (strategy = GenerationType.AUTO)
+    @Column(name = "LOGIN_ID")
+    private UUID id;
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    @Column(nullable = false, unique = true,name = "LOGIN_NAME")
+    private String login;
 
-	public Long getId() {
-		return id;
-	}
+    @Column(nullable = false, name = "PASSWORD")
+    private String password;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public UUID getId() {
+        return id;
+    }
 
-	public String getNome() {
-		return login;
-	}
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-	public void setNome(String nome) {
-		this.login = login;
-	}
+    public String getLogin() {
+        return login;
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		User other = (User) obj;
-		return Objects.equals(id, other.id);
-	}
-	
-	
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }

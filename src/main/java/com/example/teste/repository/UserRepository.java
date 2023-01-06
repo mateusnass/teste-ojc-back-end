@@ -1,12 +1,11 @@
 package com.example.teste.repository;
 
+import com.example.teste.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.teste.entity.User;
-
+import java.util.UUID;
 
 @Repository
-public interface ClienteRepository extends JpaRepository<User, Long> {
-
+public interface UserRepository extends JpaRepository<User, UUID> {
 }
