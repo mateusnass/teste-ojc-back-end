@@ -1,4 +1,35 @@
 package com.example.teste.dtos;
 
+import com.example.teste.entity.PessoaJuridica;
+import jakarta.validation.constraints.NotEmpty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.UUID;
+
+@Data
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class ClientsDto {
+
+    private UUID id;
+
+    private TelefoneDto telefone;
+
+    private String dataCriacao;
+
+    private String dataAlteracao;
+
+    private PessoaFisicaDto pessoaFisica;
+
+
+    private PessoaJuridicaDto pessoaJuridica;
+
+
+    @NotEmpty
+    private Long userId;
+
 }
