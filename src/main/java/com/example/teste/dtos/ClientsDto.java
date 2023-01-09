@@ -11,8 +11,9 @@ import java.util.UUID;
 
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+
 public class ClientsDto {
 
     private UUID id;
