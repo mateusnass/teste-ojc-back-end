@@ -1,10 +1,12 @@
 package com.example.teste.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.UUID;
 
+@Data
 @Entity
 @Table(name = "users")
 
@@ -21,27 +23,5 @@ public class User implements Serializable {
     @Column(nullable = false, name = "PASSWORD")
     private String password;
 
-    public UUID getId() {
-        return id;
-    }
 
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
