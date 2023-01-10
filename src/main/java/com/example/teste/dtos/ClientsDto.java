@@ -16,8 +16,6 @@ import java.util.UUID;
 
 public class ClientsDto {
 
-    private UUID id;
-
     private TelefoneDto telefone;
 
     private String dataCriacao;
@@ -28,9 +26,6 @@ public class ClientsDto {
 
 
     private PessoaJuridicaDto pessoaJuridica;
-
-
-    @NotEmpty
-    private Long userId;
+    ;
 
 }

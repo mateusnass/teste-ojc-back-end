@@ -36,8 +36,4 @@ public class Clients implements Serializable {
     @JoinColumn(name = "pessoaJuridica_id", referencedColumnName = "cnpj")
     private PessoaJuridica pessoaJuridica;
 
-    @ManyToOne
-    private User user;
-
-
 }
