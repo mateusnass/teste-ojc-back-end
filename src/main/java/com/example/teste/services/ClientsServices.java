@@ -35,7 +35,7 @@ public class ClientsServices {
 
     public ResponseEntity createClients(ClientsDto clientsDto) {
         Clients clientsToSave = map(clientsDto);
-//        Optional<User> user = userRepository.findById(clientsDto.getUserId());
+
         if(verifyIfExistsByExample(clientsToSave)){
             return ResponseEntity.status(HttpStatus.CONFLICT).body("The person already exists.\n");
         }
