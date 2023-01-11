@@ -16,7 +16,7 @@ public class PessoaJuridicaDto {
     private String cnpj;
 
     @NotNull
-    private String razãoSocial;
+    private String razaoSocial;
 
     @NotNull
     private String nomeFantasia;

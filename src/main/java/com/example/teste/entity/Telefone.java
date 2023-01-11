@@ -1,6 +1,7 @@
 package com.example.teste.entity;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,4 +24,8 @@ public class Telefone {
 
     @Column(nullable = false)
     private String numeroTelefone;
+
+    @JsonIgnore
+    @OneToOne(mappedBy = "telefone")
+    private Clients clients;
 }

@@ -13,9 +13,9 @@ import java.util.UUID;
 public class User implements Serializable {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
+    @GeneratedValue (strategy = GenerationType.SEQUENCE)
     @Column(name = "LOGIN_ID")
-    private UUID id;
+    private Long id;
 
     @Column(nullable = false, unique = true,name = "LOGIN_NAME")
     private String login;

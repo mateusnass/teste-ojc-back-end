@@ -3,6 +3,7 @@ package com.example.teste.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.mapstruct.Mapper;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -14,9 +15,9 @@ import java.util.UUID;
 public class Clients implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "CLIENTS_ID")
-    private UUID id;
+    private Long id;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private Telefone telefone;

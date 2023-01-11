@@ -24,8 +24,7 @@ public class ClientsDto {
 
     private PessoaFisicaDto pessoaFisica;
 
-
     private PessoaJuridicaDto pessoaJuridica;
-    ;
+
 
 }

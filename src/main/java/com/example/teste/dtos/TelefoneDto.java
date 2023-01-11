@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TelefoneDto {
 
-    private Long id;
+//    private Long id;
 
     @NotEmpty
     @Size (max=15)

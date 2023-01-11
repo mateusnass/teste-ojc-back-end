@@ -23,13 +23,14 @@ import java.util.List;
 @RequestMapping("/clients")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class ClientsController {
-    final ClientsServices clientsServices;
+    private ClientsServices clientsServices;
+
 
     public ClientsController(ClientsServices clientsServices) {
         this.clientsServices = clientsServices;
     }
 
-    @Autowired
+
     private ClientsRepository clientsRepository;
 
     @GetMapping
@@ -38,18 +39,24 @@ public class ClientsController {
     }
 
     @PostMapping
-    public ResponseEntity<Object> saveUser(@RequestBody @Valid ClientsDto clientsDto){
-
-//        if (clientsServices.existsByCpf(clientsDto.getPessoaFisica().getCpf())){
-//            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflito: CPF já existente!");
-//        }
-//
-//        if (clientsServices.existsByCnpj(clientsDto.getPessoaJuridica().getCnpj())){
-//            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflito: CNPJ já existente!");
-//        }
-
-        var clients = new Clients();
-        BeanUtils.copyProperties(clientsDto, clients);
-        return ResponseEntity.status(HttpStatus.CREATED).body(clientsServices.save(clients));
+    @ResponseStatus(HttpStatus.CREATED)
+    public ResponseEntity createPerson(@RequestBody ClientsDto clientsDto) {
+        return clientsServices.createClients(clientsDto);
     }
+
+//    @PostMapping
+//    public ResponseEntity<Object> saveUser(@RequestBody @Valid ClientsDto clientsDto){
+//
+////        if (clientsServices.existsByCpf(clientsDto.getPessoaFisica().getCpf())){
+////            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflito: CPF já existente!");
+////        }
+////
+////        if (clientsServices.existsByCnpj(clientsDto.getPessoaJuridica().getCnpj())){
+////            return ResponseEntity.status(HttpStatus.CONFLICT).body("Conflito: CNPJ já existente!");
+////        }
+//
+//        var clients = new Clients();
+//        BeanUtils.copyProperties(clientsDto, clients);
+//        return ResponseEntity.status(HttpStatus.CREATED).body(clientsServices.save(clients));
+//    }
 }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.UUID;
 
 @Repository
-public interface ClientsRepository extends JpaRepository<Clients, UUID> {
+public interface ClientsRepository extends JpaRepository<Clients, Long> {
 //    boolean existsByCpf(String cpf);
 //
 //    boolean existsByCnpj(String cnpj);
