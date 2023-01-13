@@ -6,6 +6,8 @@ import com.example.teste.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -19,5 +21,9 @@ public class UserService {
     @Transactional
     public User save(User user) {
         return userRepository.save(user);
+    }
+
+    public Optional<User> findByUser(String login) {
+        return userRepository.findByUser(login);
     }
 }
