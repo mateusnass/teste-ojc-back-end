@@ -23,7 +23,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<User> findByUser(String login) {
-        return userRepository.findByUser(login);
-    }
+////    public Optional<User> findByUser(String login) {
+////        return userRepository.findByUser(login);
+//    }
 }

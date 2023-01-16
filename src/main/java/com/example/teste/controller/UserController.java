@@ -33,7 +33,7 @@ public class UserController {
 
     @GetMapping
     public List<User> listar(){
-        return userRepository.findAll();
+        return (List<User>) userRepository.findAll();
     }
     @PostMapping
         public ResponseEntity<Object> saveUser(@RequestBody @Valid UserDto userDto){
